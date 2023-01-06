@@ -24,6 +24,12 @@ resource "azurerm_subnet" "my_terraform_subnet" {
   virtual_network_name = azurerm_virtual_network.my_terraform_network.name
   address_prefixes     = ["10.0.1.0/24"]
 }
+output "resource_group_name" {
+  value = azurerm_resource_group.rg.name
+}
 
+output "public_ip_address" {
+  value = azurerm_linux_virtual_machine.my_terraform_vm.public_ip_address
+}
 
 
